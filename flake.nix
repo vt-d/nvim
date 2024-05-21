@@ -18,6 +18,12 @@
         deadnix
         manix
 	python312Packages.python-lsp-server
+	python312Packages.black
+	python312Packages.isort
+	sumneko-lua-language-server
+
+	# copilot
+	nodePackages_latest.nodejs
       ];
 
       nvim = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped

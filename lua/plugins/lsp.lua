@@ -14,6 +14,7 @@ return {
     { 'hrsh7th/cmp-nvim-lua' },
     { 'onsails/lspkind.nvim' },
     { 'folke/neodev.nvim' },
+    { 'stevearc/conform.nvim' },
 
     -- Linting
     { 'mfussenegger/nvim-lint' },
@@ -74,7 +75,6 @@ return {
     }
 
     lsp.on_attach(function(client, _)
-      require('lsp-format').on_attach(client)
       vim.keymap.set('n', '<space>ca', function()
         vim.lsp.buf.code_action { apply = true }
       end, bufopts)
@@ -123,6 +123,17 @@ return {
     }
 
     vim.opt.signcolumn = 'yes' -- Disable lsp signals shifting buffer
+    require("conform").setup({
+      formatters_by_ft = {
+        lua = { "stylua" },
+	python = { "black", "isort" }
+      },
+      format_on_save = {
+        -- These options will be passed to conform.format()
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
+    })
 
   end,
 }

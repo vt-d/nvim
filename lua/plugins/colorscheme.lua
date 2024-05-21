@@ -6,6 +6,16 @@ return {
     priority = 1000,
     config = function()
       require('catppuccin').setup {
+	integrations = {
+	  cmp = true,
+	  gitsigns = true,
+	  neotree = true,
+	  treesitter = true,
+	  barbar = true,
+	  mini = {
+            enabled = true,
+	  },
+	},
         color_overrides = {
           all = {
             base = '#11111b',
