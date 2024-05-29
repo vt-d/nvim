@@ -57,7 +57,7 @@ return {
 		lsp.setup_servers {
 			'lua_ls',
 			'rust_analyzer',
-			'pylsp',
+			'pyright',
 			'tsserver'
 		}
 
@@ -114,7 +114,7 @@ return {
 				fields = { 'kind', 'abbr', 'menu' },
 				format = function(entry, vim_item)
 					local kind = require('lspkind').cmp_format { mode = 'symbol_text', maxwidth = 50 } (
-					entry, vim_item)
+						entry, vim_item)
 					local strings = vim.split(kind.kind, '%s', { trimempty = true })
 					kind.kind = ' ' .. (strings[1] or '') .. ' '
 					kind.menu = '    (' .. (strings[2] or '') .. ')'
@@ -136,5 +136,9 @@ return {
 				lsp_fallback = true,
 			},
 		})
+
+		require('lint').linters_by_ft = {
+			python = { 'ruff', }
+		}
 	end,
 }

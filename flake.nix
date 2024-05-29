@@ -17,13 +17,15 @@
         statix
         deadnix
         manix
-	python312Packages.python-lsp-server
+	pyright
+	ruff
 	python312Packages.black
 	python312Packages.isort
 	sumneko-lua-language-server
 
 	# copilot
 	nodePackages_latest.nodejs
+	nodePackages_latest.typescript-language-server
       ];
 
       nvim = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped
