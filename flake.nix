@@ -22,7 +22,8 @@
 	python312Packages.black
 	python312Packages.isort
 	sumneko-lua-language-server
-	llvmPackages_18.clang-unwrapped
+	llvmPackages_18.clang
+	clang-tools_18
 
 	# copilot
 	nodePackages_latest.nodejs
