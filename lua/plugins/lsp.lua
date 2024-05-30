@@ -58,7 +58,8 @@ return {
 			'lua_ls',
 			'rust_analyzer',
 			'pyright',
-			'tsserver'
+			'tsserver',
+			'clangd'
 		}
 
 		require('lspconfig').nil_ls.setup {
